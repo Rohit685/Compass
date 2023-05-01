@@ -15,13 +15,15 @@ namespace Compass
         }
         internal static bool parseSuccessful;
         internal static HeadingOrigin chosenOrigin;
-        
+        internal static DroneCam Compass;
         internal static void Main()
         {
-            DroneCam Compass = new DroneCam();
+            Compass = new DroneCam();
             ScaleFormHelperMethods.Start(Compass);
+            Settings.Initialize();
             parseSuccessful =Enum.TryParse(Settings.Heading, true, out chosenOrigin);
             CheckParse();
+            HeadingHandler.Start();
             while (true)
             {
                 GameFiber.Yield();

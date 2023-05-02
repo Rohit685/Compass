@@ -59,6 +59,7 @@ namespace Compass
             HeadingText.Position = new Point(x, y);
             Settings.PosX = x;
             Settings.PosY = y;
+            Game.DisplayNotification("commonmenu", "shop_tick_icon", "Compass", "~b~Position changed", $"New position coordinates: ({x},{y})");
             Settings.UpdateINI();
         }
         [ConsoleCommand]
@@ -66,6 +67,7 @@ namespace Compass
         {
             HeadingText.Scale = (float)x / 100f;
             Settings.Scale = x;
+            Game.DisplayNotification("commonmenu", "shop_tick_icon", "Compass", "~b~Scale changed", $"New scale: {x}");
             Settings.UpdateINI();
         }
     }

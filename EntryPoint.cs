@@ -24,6 +24,7 @@ namespace Compass
             parseSuccessful =Enum.TryParse(Settings.HeadingOrigin, true, out chosenOrigin);
             CheckParse();
             HeadingHandler.Start();
+            
             while (true)
             {
                 GameFiber.Yield();
@@ -48,12 +49,14 @@ namespace Compass
             if (chosenOrigin == HeadingOrigin.CAMERA)
             {
                 chosenOrigin = HeadingOrigin.PLAYER;
+                Game.DisplayNotification("commonmenu", "shop_tick_icon", "Compass", "~b~Heading origin changed", "Switched to ~y~PLAYER~y~");
                 Settings.HeadingOrigin = HeadingOrigin.PLAYER.ToString();
                 Settings.UpdateINI();
             }
             else
             {
                 chosenOrigin = HeadingOrigin.CAMERA;
+                Game.DisplayNotification("commonmenu", "shop_tick_icon", "Compass", "~b~Heading origin changed", "Switched to ~y~CAMERA~y~");
                 Settings.HeadingOrigin = HeadingOrigin.CAMERA.ToString();
                 Settings.UpdateINI();
             }

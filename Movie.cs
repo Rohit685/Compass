@@ -1,3 +1,4 @@
+//All credit goes to https://github.com/drummer-codes/ScaleformsResearch/blob/master/ScaleformsResearch
 using static Rage.Native.NativeFunction;
 using Color = System.Drawing.Color;
 

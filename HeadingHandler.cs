@@ -49,19 +49,24 @@ namespace Compass
         }
         internal static void SetPosition()
         {
-            HeadingText.Position = new Point(953, 90);
-            HeadingText.Scale = (float)69 / 100f;
+            HeadingText.Position = new Point(Settings.PosX, Settings.PosY);
+            HeadingText.Scale = (float)Settings.Scale / 100f;
         }
 
         [ConsoleCommand]
         private static void SetPosition(int x, int y)
         {
             HeadingText.Position = new Point(x, y);
+            Settings.PosX = x;
+            Settings.PosY = y;
+            Settings.UpdateINI();
         }
         [ConsoleCommand]
         private static void SetScale(int x)
         {
             HeadingText.Scale = (float)x / 100f;
+            Settings.Scale = x;
+            Settings.UpdateINI();
         }
     }
 }

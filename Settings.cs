@@ -4,7 +4,10 @@ namespace Compass
 {
     internal class Settings
     {
-        internal static string Heading = EntryPoint.HeadingOrigin.CAMERA.ToString();
+        internal static string HeadingOrigin = EntryPoint.HeadingOrigin.CAMERA.ToString();
+        internal static int Scale = 30;
+        internal static int PosX = 953;
+        internal static int PosY = 90;
         internal static InitializationFile iniFile;
         internal static void Initialize()
         {
@@ -12,7 +15,10 @@ namespace Compass
             {
                 iniFile = new InitializationFile(@"Plugins/Compass.ini");
                 iniFile.Create();
-                Heading = iniFile.ReadString("Customization", "Heading", Heading);
+                HeadingOrigin = iniFile.ReadString("Customization", "Heading", HeadingOrigin);
+                PosX = iniFile.ReadInt32("Customization", "PosX", PosX);
+                PosY = iniFile.ReadInt32("Customization", "PosY", PosY);
+                Scale = iniFile.ReadInt32("Customization", "Scale", Scale);
             }
             catch(System.Exception e)
             {
@@ -25,7 +31,10 @@ namespace Compass
         {
             try
             {
-                iniFile.Write("Customization", "Heading", Heading);
+                iniFile.Write("Customization", "Heading", HeadingOrigin);
+                iniFile.Write("Customization", "PosX", PosX);
+                iniFile.Write("Customization", "PosY", PosY);
+                iniFile.Write("Customization", "Scale", Scale);
             }
             catch (System.Exception ex)
             {

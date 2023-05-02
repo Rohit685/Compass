@@ -21,7 +21,7 @@ namespace Compass
             Compass = new Compass();
             ScaleFormHelperMethods.Start(Compass);
             Settings.Initialize();
-            parseSuccessful =Enum.TryParse(Settings.Heading, true, out chosenOrigin);
+            parseSuccessful =Enum.TryParse(Settings.HeadingOrigin, true, out chosenOrigin);
             CheckParse();
             HeadingHandler.Start();
             while (true)
@@ -48,13 +48,13 @@ namespace Compass
             if (chosenOrigin == HeadingOrigin.CAMERA)
             {
                 chosenOrigin = HeadingOrigin.PLAYER;
-                Settings.Heading = HeadingOrigin.PLAYER.ToString();
+                Settings.HeadingOrigin = HeadingOrigin.PLAYER.ToString();
                 Settings.UpdateINI();
             }
             else
             {
                 chosenOrigin = HeadingOrigin.CAMERA;
-                Settings.Heading = HeadingOrigin.CAMERA.ToString();
+                Settings.HeadingOrigin = HeadingOrigin.CAMERA.ToString();
                 Settings.UpdateINI();
             }
         }

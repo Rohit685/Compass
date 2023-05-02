@@ -12,7 +12,6 @@ namespace Compass
             GameFiber f = GameFiber.StartNew(delegate
             {
                 x.LoadAndWait();
-                Game.DisplayNotification("Started ~y~" + x.MovieName);
                 x.TestStart();
                 while (true)
                 {

@@ -39,6 +39,7 @@ namespace Compass
 
         internal static void CheckNegative()
         {
+            tempCaptionString = "";
             if ((int)EntryPoint.Compass.Heading < 0)
             {
                 tempCaptionString += "-";

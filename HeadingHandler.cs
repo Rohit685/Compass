@@ -14,8 +14,6 @@ namespace Compass
             Outline = true
         };
 
-        internal static string tempCaptionString = "";
-        
         internal static void Start()
         {
             SetPosition();
@@ -37,14 +35,6 @@ namespace Compass
             }
         }
 
-        internal static void CheckNegative()
-        {
-            tempCaptionString = "";
-            if ((int)EntryPoint.Compass.Heading < 0)
-            {
-                tempCaptionString += "-";
-            }
-        }
 
         internal static void Display()
         {
@@ -53,9 +43,7 @@ namespace Compass
                 GameFiber.Yield();
                 if (!Game.IsPaused)
                 {
-                    CheckNegative();
-                    tempCaptionString += $"{Math.Abs(EntryPoint.Compass.Heading).ToString()}";
-                    HeadingText.Caption = tempCaptionString;
+                    HeadingText.Caption = Math.Abs(EntryPoint.Compass.Heading).ToString();
                 }
             }
         }

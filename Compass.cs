@@ -9,9 +9,9 @@ using Rage.Native;
 
 namespace Compass
 {
-    internal class DroneCam : Movie
+    internal class Compass : Movie
     {
-        public override string MovieName => "DRONE_CAM";
+        public override string MovieName => "COMPASS";
 
         #region TOGGLES
         bool reticleIsVisible = false;

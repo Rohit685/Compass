@@ -17,6 +17,7 @@ Compass Mod
 ### Installation
 #### - Drag and drop Plugins folder into main game directory
 #### - compass.gfx and compass.ytd go into this file path: mods\update\update.rpf\x64\data\cdimages\scaleform_generic.rpf\ using OpenIV
+#### - Requires latest version of RageNativeUI and also requires RagePluginHook(neither included in install)
 
 
 

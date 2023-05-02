@@ -57,7 +57,9 @@
         <Compile Include="Util.cs" />
     </ItemGroup>
     <ItemGroup>
+      <Content Include="compass.gfx" />
       <Content Include="Compass.ini" />
+      <Content Include="compass.ytd" />
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />

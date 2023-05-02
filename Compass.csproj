@@ -60,6 +60,12 @@
       <Content Include="compass.gfx" />
       <Content Include="Compass.ini" />
       <Content Include="compass.ytd" />
+      <Content Include="Release\1.0\Compass 1.0.zip" />
+      <Content Include="Release\1.0\compass.gfx" />
+      <Content Include="Release\1.0\compass.ytd" />
+      <Content Include="Release\1.0\Plugins\Compass.dll" />
+      <Content Include="Release\1.0\Plugins\Compass.ini" />
+      <Content Include="Release\1.0\Plugins\Compass.pdb" />
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />

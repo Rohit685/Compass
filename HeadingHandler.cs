@@ -7,12 +7,14 @@ using Rage.Attributes;
 
 namespace Compass
 {
-    internal class HeadingHandler
+    internal static class HeadingHandler
     {
         internal static ResText HeadingText { get; private set; } = new ResText("",new Point(0, 0), 1f, Color.FromArgb(255, Color.White), Common.EFont.Monospace, ResText.Alignment.Left)
         {
             Outline = true
         };
+
+        internal static string tempCaptionString = "";
         
         internal static void Start()
         {
@@ -35,6 +37,14 @@ namespace Compass
             }
         }
 
+        internal static void CheckNegative()
+        {
+            if ((int)EntryPoint.Compass.Heading < 0)
+            {
+                tempCaptionString += "-";
+            }
+        }
+
         internal static void Display()
         {
             while (true)
@@ -42,7 +52,9 @@ namespace Compass
                 GameFiber.Yield();
                 if (!Game.IsPaused)
                 {
-                    HeadingText.Caption = Math.Abs(EntryPoint.Compass.Heading).ToString();
+                    CheckNegative();
+                    tempCaptionString += $"{Math.Abs(EntryPoint.Compass.Heading).ToString()}";
+                    HeadingText.Caption = tempCaptionString;
                 }
             }
         }

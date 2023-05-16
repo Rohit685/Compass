@@ -194,14 +194,7 @@ namespace Compass
 
         protected override void OnTestTick()
         {
-            if (EntryPoint.chosenOrigin == EntryPoint.HeadingOrigin.CAMERA)
-            {
-                Heading = (int)NativeFunction.Natives.GET_GAMEPLAY_CAM_RELATIVE_HEADING<float>();
-            }
-            else
-            {
-                Heading = (int)Game.LocalPlayer.Character.Heading;
-            }
+            Heading = (int)Game.LocalPlayer.Character.Heading;
             ZoomMeterVisible = false;
             HeadingMeterVisible = true;
             ShockMeterVisible = false;
